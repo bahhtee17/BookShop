@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BookShop.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,9 +14,17 @@ namespace BookShop
 {
     public class Startup
     {
-        
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            string conString = Configuration["ConnectionStrings:DefaultConnection"];
+            services.AddDbContext<EFBookContext>(options =>
+            options.UseSqlServer(conString));
+            services.AddTransient<IBookRepository, EFBookRepository>();
             services.AddMvc();
         }
 

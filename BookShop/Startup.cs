@@ -16,7 +16,7 @@ namespace BookShop
         {
             services.AddMvc();
         }
- // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -25,7 +25,12 @@ namespace BookShop
             }
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "defaults",
+                    template: "{controller=Book}/{action=List}/{id?}");
+            });
 
           
         }

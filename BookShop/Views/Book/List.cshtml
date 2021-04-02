@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Book> 
+
+@foreach(var p in Model)
+            {<div>
+               <h3>@p.Name</h3>
+                <p>@p.Author</p>
+                 @p.Description
+                 <p>@p.ISBN</p>
+                 <p>$@p.Price.ToString("F2")</p>
+              </div>
+            }

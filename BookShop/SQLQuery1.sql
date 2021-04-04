@@ -1,0 +1,20 @@
+﻿INSERT INTO Books (Name, Author, Description, Category, ISBN, Price)
+VALUES
+('Code Complete',
+'Steve McConnell',
+'Code Complete is a software development book, written by Steve McConnell and published in 1993 by Microsoft Press, encouraging developers to continue past code-and-fix programming and the big design up front and waterfall models. It is also a compendium of software construction techniques, which include techniques from naming variables to deciding when to write a subroutine.',
+'Computer programming',
+'978-0-7356-1967-8',
+45.6),
+('The Wright Brothers', 
+'David McCullough',
+'The Wright Brothers is a 2015 non-fiction book written by the popular historian David McCullough and published by Simon & Schuster. It is a history of the American inventors and aviation pioneers Orville and Wilbur Wright.[1] The book was on The New York Times Non-Fiction Best Sellers list for seven weeks in 2015.',
+'History',
+'1476728747',
+56.9),
+('Lord of the Flies',
+'William Golding',
+'Lord of the Flies is a 1954 novel by Nobel Prize-winning British author William Golding. The book focuses on a group of British boys stranded on an uninhabited island and their disastrous attempt to govern themselves. Themes include the tension between groupthink and individuality, between rational and emotional reactions, and between morality and immorality.',
+'Allegorical novel',
+'0-571-05686-5',
+43.6)

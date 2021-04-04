@@ -1,16 +1,24 @@
 ﻿@model IEnumerable<Book>
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+<div class="jumbotron text-center p-5 ">
+    <h1>Welcome To BookShop</h1>
+    <p>Сhoose your favorite genre of books and enjoy reading</p>
+</div>
 
 
 
-   <div class="container">
-       
-           @foreach(var p in Model)
-            {
-       <div class="col-lg-4">
-           <img class="img-thumbnail" src="@p.Image" alt="Image" />
-           <h4>@p.Category</h4>
-           
-       </div>
-            }
-      
-   </div>
+<div class="container row m-lg-5 bg-white">
+
+    @foreach (var p in Model)
+    {
+        <div class="col ">
+            <div class="text-center">
+                <img class="img-thumbnail bg-dark" src="@p.Image" alt="Image" />
+                <h4>@p.Category</h4>
+            </div>
+
+        </div>
+    }
+
+</div>
